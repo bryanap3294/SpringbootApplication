@@ -1,0 +1,18 @@
+ {
+   "sheet": "AppParametria",
+   "title": "AppParametria",
+   "headers":[
+     {
+       "name":"id",
+       "styles":{
+         "font":"Arial"
+       }
+     },
+     {
+       "name":"modulo",
+       "styles":{
+         "font":"Arial"
+       }
+     }
+    ]
+   }
