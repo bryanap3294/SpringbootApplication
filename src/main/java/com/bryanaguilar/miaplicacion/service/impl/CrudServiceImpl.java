@@ -12,6 +12,8 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.Entity;
+
 @Component
 public abstract class CrudServiceImpl<T extends BaseEntity, S extends Serializable> implements CrudService<T> {
 
@@ -25,8 +27,8 @@ public abstract class CrudServiceImpl<T extends BaseEntity, S extends Serializab
 
     @Override
     public List<T> findAll() {
-        //List<T> lista = this.entityRepository.findAll();
-        return null;//lista;
+        List<T> lista = this.entityRepository.findAll();
+        return lista;
     }
 
     @Override

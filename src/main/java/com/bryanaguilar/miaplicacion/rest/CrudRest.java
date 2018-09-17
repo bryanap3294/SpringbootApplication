@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/AppParametria")
 public abstract class CrudRest<T> {
 
     @Autowired

@@ -1,18 +1,23 @@
 package com.bryanaguilar.miaplicacion.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-@Entity
-public abstract class BaseEntity {
 
+@MappedSuperclass
+@SuppressWarnings("serial")
+public abstract class BaseEntity<T> {
+
+    
+    private T id;
+ 
     @Id
-    private Integer id;
+	public T getId() {
+		return id;
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public void setId(T id) {
+		this.id = id;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

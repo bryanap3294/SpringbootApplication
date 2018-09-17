@@ -4,39 +4,41 @@ import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.NaturalId;
+
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 
 @Entity
 @Table(name = "app_parametria")
-public class AppParametria extends BaseEntity implements Serializable {
+@AttributeOverride(name = "id", column = @Column(name = "id_parametria", precision = 10))
+public class AppParametria extends BaseEntity<Integer> {
     private static final long serialVersionUID = 1L;
 
     // Raw attributes
+    
     private Integer id;
     private String modulo;
     private String label;
     private String description;
+    
     private String value1;
+    
     private String value2;
+    
     private String value3;
     private String status;
 
     // -- [id] ------------------------
-
     @Column(name = "id_parametria", precision = 10)
-    @GeneratedValue(strategy = SEQUENCE, generator = "seq_app_parametria")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_app_parametria")
     @Id
     @SequenceGenerator(name = "seq_app_parametria", sequenceName = "seq_app_parametria")
     public Integer getId() {
         return id;
     }
 
+    @Override
     public void setId(Integer id) {
         this.id = id;
     }

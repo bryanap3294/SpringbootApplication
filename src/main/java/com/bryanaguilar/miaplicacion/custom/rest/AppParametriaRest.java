@@ -4,9 +4,11 @@ import com.bryanaguilar.miaplicacion.custom.repository.AppParametriaRepository;
 import com.bryanaguilar.miaplicacion.model.AppParametria;
 import com.bryanaguilar.miaplicacion.rest.CrudRest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api/AppParametria")
 public class AppParametriaRest extends CrudRest<AppParametria> {
 
     @Autowired
